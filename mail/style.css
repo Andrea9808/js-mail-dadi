@@ -1,0 +1,20 @@
+
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.button_mail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    border-radius: 15px;
+    background-color: rgb(190, 34, 34);
+    width: 250px;
+    height: 250px;
+
+}

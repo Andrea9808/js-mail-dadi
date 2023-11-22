@@ -4,38 +4,47 @@
 
 
 
-//chiedo all'utente qual'è la sua mail
-const mailUser = prompt("Qual'è la tua mail?");
-//console.log(mailUser);
 
+// stabilisco le costanti del bottone, dell'input mail e
+const button = document.querySelector(".btn1");
+const mailUser = document.getElementById("mail");
+const mail = ["andrea@gmail.com","carmelo@gmail.com","francesco@gmail.com"]
 
-// Dichiaro le mail
-const mail = [
-    "andrea@gmail.com",
-    "carmelo@gmail.com",
-    "francesco@gmail.com"
-];
-//console.log(mail);
+// controllo se l'email è stata trovata o no
+button.addEventListener("click",
 
-// controllo se l'utente è dentro o fuori
+function(){
 
-for (let i = 0; i < mail.length; i++) {
+    let emailCheck = mailUser.value;
+   
+    document.getElementById("output").innerHTML = "Non è stata trovata nessuna mail";
 
+    for (let i = 0; i < mail.length; i++) {
 
+       if(emailCheck === mail[i]){
 
-    if (mailUser === mail[i]) {
-        let correct;
-        correct = "Sei dentro!"
-        console.log(correct);
-        
+        document.getElementById("output").innerHTML = "La tua mail è stata trovata";
 
-    } else if (mailUser !== mail[i]) {
-        let error;
-        error = "Sei fuori!"
-        console.log(error);
+       }
+
     }
+})
 
-}
+
+
+
+   
+
+
+
+
+
+   
+    
+
+
+
+
 
 
 
