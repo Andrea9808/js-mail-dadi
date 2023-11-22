@@ -3,34 +3,43 @@
 //stampa un messaggio appropriato sull’esito del controllo
 
 
+ // Stabilisco le costanti del bottone, dell'input mail e della lista di email
+ const button = document.querySelector(".btn1");
+ const mailUser = document.getElementById("mail");
+ const mail = [
+    "andrea@gmail.com", 
+    "carmelo@gmail.com", 
+    "francesco@gmail.com"];
 
+ // Aggiungo un listener per l'evento di clic sul bottone
+ button.addEventListener("click", function ()
+  {
+     //verifico la mail che inserisco
+     let emailCheck = mailUser.value;
 
-// stabilisco le costanti del bottone, dell'input mail e
-const button = document.querySelector(".btn1");
-const mailUser = document.getElementById("mail");
-const mail = ["andrea@gmail.com","carmelo@gmail.com","francesco@gmail.com"]
+     //creo variabile per mail corretta
+     let emailTrovata;
 
-// controllo se l'email è stata trovata o no
-button.addEventListener("click",
+     // Controllo se l'email è nella lista
+     for (let i = 0; i < mail.length; i++) {
+         if (emailCheck === mail[i]){
+             
+            emailTrovata = mail[i];
 
-function(){
+         }
+     }
 
-    let emailCheck = mailUser.value;
-   
-    document.getElementById("output").innerHTML = "Non è stata trovata nessuna mail";
+     // output
+     if (emailTrovata) {
 
-    for (let i = 0; i < mail.length; i++) {
+         document.getElementById("output").innerHTML = "La tua mail è stata trovata";
 
-       if(emailCheck === mail[i]){
+     } else {
 
-        document.getElementById("output").innerHTML = "La tua mail è stata trovata";
+         document.getElementById("output").innerHTML = "Non è stata trovata nessuna mail";
 
-       }
-
-    }
-})
-
-
+     }
+ });
 
 
    
